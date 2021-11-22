@@ -1,0 +1,20 @@
+For part 4 improvemnt, I tested my implementation with the word "accomodate" in the file  misspelling.csv. I tested with the count 3, 5, and 7,
+and I uploaded the result in the seperate file names "Misspelling test - accomodate".
+
+What I observed from the result is that, when we have a misspelling word and the value of count really have a significant different on the result.
+When the value of counts gets bigger there are less likely to get the wrong spelling, and the suggested word that showed up are more accurate.
+The suggest words have higher chances to suggest the correct spelling of the words.
+
+For example, I tested the word "accomodate" which is misspelling, with the count 3, 5, 7.
+When I make the count to be 7, the suggest list does not even shows the word "accomodate" instaed it shows the different possibilities of the correct spelling.
+Because when we have the higher count, the implementation will check the prefix and when the spelling gets wrong the child under that prefix will be very few even 
+no child, so the implementation will go back to the previous prefix to check. And when it found more correct words that have higher count, the implementation will
+save the spots for higher count word and remove the lower count words. Therefore, when the counts gets higher, the suggest are more accurate.
+
+But when we make the count to be 5 and 3, the misspelling word "accomodate" appears in the suggest list. And the possition of the misspelling word is geeing to 
+the front of the list. So when the count is small, people are more likely to get the misspelling words instead of getting the suggest correct spelling.
+
+What, if anything, could be changed in the implementation to get the correct spelling of the input tokens?
+The improvement I can make to changed the implementaiton to get the correct spelling of the input tokens is to make the tokens with lower value also suggest the 
+accurate spelling. What I can do it's to double the input tokens value everytime, and find the suggest list of the double token value. And just return the first 
+half of the suggest list, then the suggest of the correct spelling will be more accurate.
